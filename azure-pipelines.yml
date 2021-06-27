@@ -10,13 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: cd '$(System.DefaultWorkingDirectory)'
   displayName: 'Run a one-line script'
 
 - task: CmdLine@2
   inputs:
     script: |
-      cd '$(System.DefaultWorkingDirectory)'
       npm i bower
 - task: WhiteSource@20
   inputs:
