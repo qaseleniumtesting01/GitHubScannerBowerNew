@@ -20,7 +20,9 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'npm i bower'
+    script: |
+      cd $(System.DefaultWorkingDirectory)
+      npm i bower
 - task: WhiteSource@20
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
